@@ -1,69 +1,63 @@
-const IEX_ENDPOINT = 'https://api.iextrading.com/1.0/stock/FB/book';
-
-function handleRunStockScreener()
+function handleStartPage()
 {
-	$( '#searchForm' ).on( 'submit', function( event )
+	// Listens to submit button
+   $( '#searchForm' ).on( 'submit', function( event )
 		{
 			event.preventDefault();
-			let searchItem = $(event.currentTarget).find('#searchInput').val();
-			console.log( searchItem );
+			let searchItem = $( event.currentTarget ).find( '#searchInput' ).val();			
 
-			const QUERY = { symbol: 'FB' }
-
-			$.getJSON(IEX_ENDPOINT, displayResultsPage);
+			// Makes a request to the endpoint for data about the search company 
+         // Calls displayResults() as callBack function
+         $.getJSON( `https://api.iextrading.com/1.0/stock/${ searchItem }/book`, displayResultsPage );
 		} );
 }
 
-function displayResultsPage(data)
+function displayResultsPage( data )
 {
-	console.log(data);
-}
+	// Hide startPage
+   $( '.startPage' ).remove();
 
-/*
-FUNCTION STUBS
+   // Calls renderResults(), passing response as parameter
+   renderResults( data );
 
-displayStartPage()
-{
-   // Renders start page
-   // Allows user to input company name or stock ticker symbol for search
-   // Listens to submit button
-   // Calls makeRequest(), passing in user's search item as parameter
-   
-}
+   console.log(data);
+   console.log(data.quote.companyName);
+   console.log(data.quote.delayedPrice);
 
-
-makeRequest()
-{
-   // Creates query object
-   // Makes a request to the endpoint for data about the search company 
-   // Calls displayResults(), passing in response as parameter
-}
-
-
-displayResultsPage()
-{
-   // Hide startPage
    // Makes response visible by displaying the results page
-   // Calls renderResults, passing response as parameter
-   // ***IS THIS THE PLACE FOR THE "DELETE" and "ADD COMPARABLE" BUTTONS*****
-   // Calls renderResults()
+   $( '.displayPage' ).show();
 }
 
 
-renderResults()
+
+
+// FUNCTION STUBS
+
+function renderResults( results )
 {
    // Calls createHtmlStrings()
+   let result = createHtmlStrings( results );
+   
    // Add HTML strings to the DOM
+   $( '.displayPage' ).html( result );
 }
 
 
-createHtmlStrings()
+
+function createHtmlStrings( htmlStringDataSource )
 {
    // Creates the HTML strings needed to display results
+   return `<p>${ htmlStringDataSource.quote.companyName }</p>
+           <p>${ htmlStringDataSource.quote.delayedPrice }</p>
+           <div><button>Delete</button></div>
+           <div><button>Add Comps</button></div>`;
+   
+
+   // ***IS THIS THE PLACE FOR THE "DELETE" and "ADD COMPARABLE" BUTTONS*****
 }
 
 
-
+/*
 deleteCompany()
 {
    // Listens for click on "Delete Company Button"
@@ -111,4 +105,4 @@ displayBrokers()
 }
 */
 
-$( handleRunStockScreener )
+$( handleStartPage )
