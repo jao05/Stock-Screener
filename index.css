@@ -122,3 +122,10 @@ h3
 {
 	font-size: 20px;
 }
+
+#errorMsg
+{
+	display: none;
+	color: red;
+	margin-top: 35px;
+}

@@ -1,3 +1,5 @@
+let orignalSearchComp; // global variable used to request comparable companies
+
 function handleStartPage()
 {
 	// Listens to submit button
@@ -8,9 +10,9 @@ function handleStartPage()
       // store the term that the user enters into input search box
       let searchItem = $( event.currentTarget ).find( '#searchInput' ).val();	
 
-			/*******************************
-      *NEED TO VALIDATE INPUT SOMEHOW
-      *******************************/
+			// Store the user's search term for later use in peer request
+      orignalSearchComp = searchItem;
+
       // Calls makeRequest to interact with server
       makeRequest( searchItem );
 		} );
@@ -20,6 +22,7 @@ function handleStartPage()
    {
       // call brokers function
       displayBrokers();
+      $( '.peerPage' ).hide();
    } );
 
    
@@ -36,7 +39,11 @@ function makeRequest( searchItem )
 {
    // Makes a request to the endpoint for data about the searched company 
    // Calls displayResultsPage() as callBack function
-  $.getJSON( `https://api.iextrading.com/1.0/stock/${ searchItem }/book`, displayResultsPage );
+  $.getJSON( `https://api.iextrading.com/1.0/stock/${ searchItem }/book`, displayResultsPage )
+  .fail( function( event )
+    {
+       $( '#errorMsg' ).show();
+    } );
 }
 
 
@@ -50,6 +57,9 @@ function displayResultsPage( data )
 
    // Makes response visible by displaying the results page
    $( '.displayPage' ).show();
+
+   addComparableComps();
+
 }
 
 
@@ -73,7 +83,89 @@ function createHtmlStrings( htmlStringDataSource )
            <p>Ticker: ${ htmlStringDataSource.quote.symbol }</p>
            <p>Sector: ${ htmlStringDataSource.quote.sector }</p>
            <p>Price: $${ htmlStringDataSource.quote.latestPrice }</p>
-           <div><button id="purchaseBtn">Purchase</button><button id="newSearchBtn">New Search</button></div>`;
+           <div><button id="addCompBtn">Add Comps</button><button id="purchaseBtn">Purchase</button><button id="newSearchBtn">New Search</button></div>`;
+}
+
+function addComparableComps() //  identifier of parameter????...event delegation?
+{
+   // Listens for click on "Add Comparable Button"
+   $( '#addCompBtn' ).on( 'click', function ( event )
+   {
+      $( '#addCompBtn' ).hide();
+      
+
+      // Calls makeComparablesRequest() to get comparables of orginal search company
+      makeComparablesRequest( orignalSearchComp );
+   });   
+}
+
+
+function makeComparablesRequest( originalCompany )
+{
+   // Make a request for the original company's comparable peer companies
+   // Calls a callBack function that appends the appropriate comparable html to the display page
+   $.getJSON( `https://api.iextrading.com/1.0/stock/${ originalCompany }/peers`, appendToDisplayPage );
+}
+
+
+function appendToDisplayPage( data )
+{
+   //Testing
+   console.log( data );   
+
+   // Use for loop to call createHtmlStringToAppendToDisplayPage() multiple times (length of the array), passing in comparable companies as parameters
+   // I only want to handle at most three comparable companies...
+   
+   for( let comp = 0; comp < 3; comp++ )
+   {
+      createHtmlStringToAppendToDisplayPage( data[ comp ] );
+   }     
+}
+
+
+function createHtmlStringToAppendToDisplayPage( comparable )
+{
+   makePeerRequest( comparable );
+}
+
+
+function makePeerRequest( comparable )
+{
+  $.getJSON( `https://api.iextrading.com/1.0/stock/${ comparable }/book`, displayPeerPage )
+  .fail( function( event )
+    {
+       $( '#errorMsg' ).show();
+    } );
+}
+
+
+function displayPeerPage( data )
+{
+   // Calls renderResults(), passing response as parameter
+   renderPeerResults( data );   
+
+   // Makes response visible by displaying the results page
+   $( '.peerPage' ).show();   
+}
+
+
+function renderPeerResults( results )
+{
+   // Calls createHtmlStrings()
+   let result = createPeerHtmlStrings( results );
+   
+   // Add HTML strings to the DOM
+   $( '.peerPage' ).append( result );
+}
+
+
+function createPeerHtmlStrings( peerDataSource ) 
+{
+  // Creates the HTML strings needed to display results
+   return `<p>${ peerDataSource.quote.companyName }</p>
+           <p>Ticker: ${ peerDataSource.quote.symbol }</p>
+           <p>Sector: ${ peerDataSource.quote.sector }</p>
+           <p>Price: $${ peerDataSource.quote.latestPrice }</p>`
 }
 
 
@@ -107,7 +199,7 @@ $( handleStartPage )
 is returned in createHtmlStrings():
 
 <div><button id="deleteBtn">Delete</button></div>
-<div><button id="addCompBtn">Add Comps</button></div>
+
 
 ************************************************************************************************/
 
@@ -119,50 +211,6 @@ function deleteCompany()
 {
    // Listens for click on "Delete Company Button"
    // Use event delegation to remove selected company from the display page
-}
-
-
-function addComparableComps() //  identifier of parameter????...event delegation?
-{
-   // Listens for click on "Add Comparable Button"
-   $( '#addCompBtn' ).on( click, function ( event )
-   {
-      let originalComp = ""; // *******HWO DO I GET WHAT I WANT HERE??*********
-
-      // Calls makeComparablesRequest() to get comparables of orginal search company
-      makeComparablesRequest( originalComp );
-   });
-
-   // Removes "Add Comps" button as its pressed
-   $( '#addCompBtn' ).remove();   
-}
-
-
-function makeComparablesRequest( originalCompany )
-{
-   // Make a request for the original company's comparable peer companies
-   // Calls a callBack function that appends the appropriate comparable html to the display page
-   $.getJSON( `https://api.iextrading.com/1.0/stock/${ originalCompany }/peers`, appendToDisplayPage );
-}
-
-
-function appendToDisplayPage( data )
-{
-   //Testing
-   console.log( data );   
-
-   // Use for loop to call createHtmlStringToAppendToDisplayPage() multiple times (length of the array), passing in comparable companies as parameters
-   // I only want to handle two comparable companies...
-   for( let comp = 0; comp < data.length; comp++ )
-   {
-      createHtmlStringToAppendToDisplayPage( comp );
-   }   
-}
-
-
-function createHtmlStringToAppendToDisplayPage( comparable )
-{
-   makeRequest( comparable );
 }
 
 
