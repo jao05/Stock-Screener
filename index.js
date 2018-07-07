@@ -73,8 +73,7 @@ function createHtmlStrings( htmlStringDataSource )
            <p>Ticker: ${ htmlStringDataSource.quote.symbol }</p>
            <p>Sector: ${ htmlStringDataSource.quote.sector }</p>
            <p>Price: $${ htmlStringDataSource.quote.latestPrice }</p>
-           <div><button id="purchaseBtn">Purchase</button></div>
-           <div><button id="newSearchBtn">New Search</button></div>`;
+           <div><button id="purchaseBtn">Purchase</button><button id="newSearchBtn">New Search</button></div>`;
 }
 
 
@@ -85,9 +84,10 @@ function displayBrokers()
   // Output: "Visit one of these sites to place your order"
   // Provide linked photos of at least 3 brokers
   $( '.displayPage' ).html( '<p><h3>Visit one of these sites to place your order.</h3></p>' +
-    '<div class="brokerLogos"><a href="https://us.etrade.com/home"><img src="http://pennystockreview.org/wp-content/uploads/2018/01/1.jpg" alt="etrade logo"></a>' +
-    '<a href="https://www.tdameritrade.com/home.page"><img src="https://libn.com/files/2017/09/TD-Ameritrade.jpg" alt="td logo"></a>' +
-    '<a href="https://www.fidelity.com/"><img src="https://media.glassdoor.com/sqll/2786/fidelity-investments-squarelogo-1498762947951.png" alt="fidelity logo"></a></div>' );
+    '<div class="brokerLogos"><a href="https://us.etrade.com/home" target="_blank"><img src="http://pennystockreview.org/wp-content/uploads/2018/01/1.jpg" alt="etrade logo"></a>' +
+    '<a href="https://www.tdameritrade.com/home.page" target="_blank"><img src="https://libn.com/files/2017/09/TD-Ameritrade.jpg" alt="td logo"></a>' +
+    '<a href="https://www.fidelity.com/" target="_blank"><img src="https://media.glassdoor.com/sqll/2786/fidelity-investments-squarelogo-1498762947951.png" alt="fidelity logo"></a></div>' +
+    '<div><button id="newSearchBtn">New Search</button></div>' );
 }
 
 
