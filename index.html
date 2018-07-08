@@ -7,41 +7,40 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Play|Raleway|Source+Serif+Pro" rel="stylesheet">
     <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="responsive.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <header role="banner">
-      <h1>StockScreener</h1>      
-    </header>
+    <div id="container">
+      <header role="banner">
+        <h1>StockScreener</h1>  
+      </header>
 
-    <main role="main">
-      <div class="startPage">
-        <p><h3>Enter a company ticker symbol to retrieve finanacial data</h3></p>
+      <main role="main">
+        <div class="startPage">
+          <p><h3>Enter a company ticker symbol to retrieve financial data</h3></p>
+          
+          <form id="searchForm">
+            <label for="searchInput"></label>
+            <input id="searchInput" name="searchInput" placeholder="ex: FB for FaceBook">
+
+            <div>
+              <button type="submit" class="submitButton">Submit</button>
+            </div>
+
+            <p id="errorMsg" aria-live="assertive">Invalid entry. Please select a valid stock ticker symbol.</p>
+          
+          </form>
+        </div>
+
+        <div class="displayPage" aria-live="assertive" ></div>
+
+        <div class="peerPage" aria-live="assertive"></div>
+
         
-        <form id="searchForm">
-          <label for="searchInput"></label>
-          <input id="searchInput" name="searchInput" placeholder="ex: FB for FaceBook">
-
-          <div>
-            <button type="submit" class="submitButton">Submit</button>
-          </div>
-
-          <p id="errorMsg">Invalid entry. Please select a valid stock ticker symbol.</p>
-        
-        </form>
-      </div>
-
-      <div class="displayPage">
-        
-      </div>
-
-      <div class="peerPage">
-        
-      </div>
-
-      
-    </main>
-
+      </main>      
+    </div>
     
     
     <script src="index.js"></script>

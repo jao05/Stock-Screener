@@ -8,7 +8,10 @@ function handleStartPage()
 			event.preventDefault(); // prevent default form submission behavior
 			
       // store the term that the user enters into input search box
-      let searchItem = $( event.currentTarget ).find( '#searchInput' ).val();	
+      let searchItem = $( event.currentTarget ).find( '#searchInput' ).val();
+
+      // Clear search box text
+      $( event.currentTarget ).find( '#searchInput' ).val( "" );	
 
 			// Store the user's search term for later use in peer request
       orignalSearchComp = searchItem;
@@ -35,6 +38,7 @@ function handleStartPage()
 }
 
 
+
 function makeRequest( searchItem )
 {
    // Makes a request to the endpoint for data about the searched company 
@@ -45,6 +49,7 @@ function makeRequest( searchItem )
        $( '#errorMsg' ).show();
     } );
 }
+
 
 
 function displayResultsPage( data )
@@ -86,6 +91,8 @@ function createHtmlStrings( htmlStringDataSource )
            <div><button id="addCompBtn">Add Comps</button><button id="purchaseBtn">Purchase</button><button id="newSearchBtn">New Search</button></div>`;
 }
 
+
+
 function addComparableComps() //  identifier of parameter????...event delegation?
 {
    // Listens for click on "Add Comparable Button"
@@ -100,6 +107,7 @@ function addComparableComps() //  identifier of parameter????...event delegation
 }
 
 
+
 function makeComparablesRequest( originalCompany )
 {
    // Make a request for the original company's comparable peer companies
@@ -108,19 +116,18 @@ function makeComparablesRequest( originalCompany )
 }
 
 
+
 function appendToDisplayPage( data )
 {
-   //Testing
-   console.log( data );   
-
    // Use for loop to call createHtmlStringToAppendToDisplayPage() multiple times (length of the array), passing in comparable companies as parameters
    // I only want to handle at most three comparable companies...
    
-   for( let comp = 0; comp < 3; comp++ )
+   for( let comp = 0; comp < 2; comp++ )
    {
       createHtmlStringToAppendToDisplayPage( data[ comp ] );
    }     
 }
+
 
 
 function createHtmlStringToAppendToDisplayPage( comparable )
@@ -139,6 +146,7 @@ function makePeerRequest( comparable )
 }
 
 
+
 function displayPeerPage( data )
 {
    // Calls renderResults(), passing response as parameter
@@ -147,6 +155,7 @@ function displayPeerPage( data )
    // Makes response visible by displaying the results page
    $( '.peerPage' ).show();   
 }
+
 
 
 function renderPeerResults( results )
@@ -159,15 +168,15 @@ function renderPeerResults( results )
 }
 
 
+
 function createPeerHtmlStrings( peerDataSource ) 
 {
   // Creates the HTML strings needed to display results
-   return `<p>${ peerDataSource.quote.companyName }</p>
+   return `<div class="compDiv"><p>${ peerDataSource.quote.companyName }</p>
            <p>Ticker: ${ peerDataSource.quote.symbol }</p>
            <p>Sector: ${ peerDataSource.quote.sector }</p>
-           <p>Price: $${ peerDataSource.quote.latestPrice }</p>`
+           <p>Price: $${ peerDataSource.quote.latestPrice }</p></div>`
 }
-
 
 
 
@@ -185,53 +194,3 @@ function displayBrokers()
 
 
 $( handleStartPage )
-
-
-
-
-/*********************************
-*POSSIBLE ADDITIONAL FUNCTIONALITY
-**********************************/
-
-
-/***********************************************************************************************
-*If adding additional functionality, add the following buttons to the bottom of the string that
-is returned in createHtmlStrings():
-
-<div><button id="deleteBtn">Delete</button></div>
-
-
-************************************************************************************************/
-
-// ********FUNCTION STUBS*********
-
-
-/*
-function deleteCompany()
-{
-   // Listens for click on "Delete Company Button"
-   // Use event delegation to remove selected company from the display page
-}
-
-
-
-makeReccomendation()
-{
-   // Creates ranking criteria for displayed companies using "secret algorithm"
-   // Selects recommended company
-   // Makes user aware of recommended company
-   // Prompt user to buy
-   // If user selects 'yes', call makePurchase()
-   // else (if user selects 'no') prompt user to search again
-}
-
-
-
-function makePurchase()
-{
-   // Ask user for available funds
-   // Get current price of stock
-   // Show user how many shares they can afford to purchase
-   // Call displayBrokers()
-}
-*/
