@@ -23,6 +23,12 @@
 		font-size: 25px;
 	}
 
+	#errorMsg
+	{
+		font-size: 40px;
+		width: 200px;
+	}
+
 	.peerPage
 	{
 		background-color: transparent;
@@ -35,6 +41,12 @@
 		border: 1px solid black;
 		margin: 5px auto 20px auto;
 
+	}
+
+	.compDiv p
+	{
+		max-width: 175px;
+		word-wrap: break-word;
 	}
 
 	.brokerLogos
