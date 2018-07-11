@@ -19,6 +19,29 @@ Technologies Used
 4. CSS
 
 
+ScreenShots
+-----------------
+
+Home Page
+
+![ SS1.png ](https://github.com/jao05/Stock-Screener/blob/master/SS1.png)
+
+
+Results
+
+![ SS2.png ](https://github.com/jao05/Stock-Screener/blob/master/SS2.png)
+
+
+Peers
+
+![ SS3.png ](https://github.com/jao05/Stock-Screener/blob/master/SS3.png)
+
+
+Purchase
+
+![ SS4.png ](https://github.com/jao05/Stock-Screener/blob/master/SS4.png)
+
+
 Live Demo
 --------------------
 
