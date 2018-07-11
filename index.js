@@ -172,7 +172,7 @@ function renderPeerResults( results )
 function createPeerHtmlStrings( peerDataSource ) 
 {
   // Creates the HTML strings needed to display results
-   return `<div class="compDiv"><p>${ peerDataSource.quote.companyName }</p>
+   return `<div class="compDiv col-3"><p>${ peerDataSource.quote.companyName }</p>
            <p>Ticker: ${ peerDataSource.quote.symbol }</p>
            <p>Sector: ${ peerDataSource.quote.sector }</p>
            <p>Price: $${ peerDataSource.quote.latestPrice }</p></div>`

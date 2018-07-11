@@ -7,11 +7,61 @@
 		background-color: #E2E8E8;
 		font-size: 35px;
 	}
+
+	.col-3
+	{
+		width: 100%;
+	}
+
+	h1
+	{
+		font-size: 30px;
+	}
+
+	h3
+	{
+		font-size: 25px;
+	}
+
+	.peerPage
+	{
+		background-color: transparent;
+		border: none;
+		font-size: 25px;		
+	}
+
+	.compDiv
+	{
+		border: 1px solid black;
+		margin: 5px auto 20px auto;
+
+	}
+
+	.brokerLogos
+	{
+	   margin: 5px auto 20px auto;	
+	   text-align: center;	
+	}
+
+	.brokerLogos img
+	{
+		width: 190px;
+		height: 190px;
+	}
+
+	.displayPage
+	{
+		width: 100%;
+	}
+
 }
 
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) 
 {
-   
+   .col-3
+	{
+		width: 25%;
+	}
 }
