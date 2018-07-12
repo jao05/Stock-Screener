@@ -74,6 +74,9 @@ img:hover
 	height: 50px;
 	font-size: 30px;
 	border: transparent;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 
 }
 

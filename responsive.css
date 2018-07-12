@@ -66,6 +66,11 @@
 		width: 100%;
 	}
 
+	.submitButton
+	{
+		width: 100%;
+	}
+
 }
 
 
@@ -75,5 +80,41 @@
    .col-3
 	{
 		width: 25%;
+	}
+
+	main
+	{
+		text-align: center;
+	}
+
+	#container
+	{
+		text-align: center;
+	}
+
+	.startPage
+	{
+		text-align: center;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	h3
+	{
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #E6E8E2;
+	}
+
+	#searchInput
+	{
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+	}
+
+	.submitButton
+	{
+		width: 100%;
 	}
 }
