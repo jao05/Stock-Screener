@@ -7,6 +7,8 @@ html
 {
 	background-image: url( 'SSbackgroundImage.jpg' );
 	background-size: cover;
+	background-repeat: no-repeat;	
+	min-width: 1000px;
 }
 
 
@@ -15,15 +17,27 @@ html
 	width: 100%;
 }
 
+.startPrompt 
+{
+    background-color: #E6E8E2;
+    font-size: 1.5em;
+    padding: 5px;
+}
+
 .displayPage
 {
 	display: none;
+	background-color: white;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
 }
 
 #errorMsg
 {
 	font-size: 30px;
-	width: 700px;
+	width: 70%;
 	background-color: white;
 	margin-right: auto;
 	margin-left: auto;
@@ -95,16 +109,35 @@ body
 header
 {
 	text-align: center;
-	font-size: 35px;
+	font-size: 3em;
 	color: black;
 	font-family: 'Raleway', san-serif;
+	width: 100%;
+	height: 30%;
+	margin-left: auto;
+	margin-right: auto;
+}
 
+h1
+{	
+	font-size: 1em;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 h3
 {
 	margin-bottom: 50px;
 	font-family: 'Raleway', san-serif;
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+main
+{
+	width: 100%;
+	height: 60%;
 }
 
 .startPage
@@ -115,18 +148,21 @@ h3
 .displayPage
 {
 	text-align: center;
+	width: 80%;
+	height: 50%;
 }
 
 #purchaseBtn
 {
-	margin: 20px;
-	width: 150px;
-	height: 50px;
-	font-size: 20px;
+	
+	width: 20%;
+	height: 100%;
+	font-size: 100%;
 	background-color: #223DE8;
 	color: white;
 	border-radius: 25px;
 	border: transparent;
+	margin: 10px;
 }
 
 #purchaseBtn:hover
@@ -138,14 +174,15 @@ h3
 
 #newSearchBtn
 {
-	margin: 20px;
-	width: 150px;
-	height: 50px;
-	font-size: 20px;
+	
+	width: 20%;
+	height: 100%;
+	font-size: 100%;
 	background-color: #223DE8;
 	color: white;
 	border-radius: 25px;
 	border: transparent;
+	margin: 10px;
 }
 
 #newSearchBtn:hover
@@ -158,14 +195,15 @@ h3
 
 #addCompBtn
 {
-	margin: 20px;
-	width: 150px;
-	height: 50px;
-	font-size: 20px;
+	
+	width: 20%;
+	height: 100%;
+	font-size: 100%;
 	background-color: #223DE8;
 	color: white;
 	border-radius: 25px;
 	border: transparent;
+	margin: 10px;
 }
 
 #addCompBtn:hover
@@ -179,14 +217,15 @@ h3
 {
 	text-align: center;
 	margin-top: 50px;
-	width: 900px;
-	height: 200px;
+	width: 75%;
+	height: 33%;
 	display: none;
     padding: 30px;
 	background-color: #FFFDF7;
 	margin-right: auto;
 	margin-left: auto;
 	border: 1px solid black;
+	font-size: 1em;
 	
 }
 

@@ -88,7 +88,7 @@ function createHtmlStrings( htmlStringDataSource )
            <p>Ticker: ${ htmlStringDataSource.quote.symbol }</p>
            <p>Sector: ${ htmlStringDataSource.quote.sector }</p>
            <p>Price: $${ htmlStringDataSource.quote.latestPrice }</p>
-           <div><button id="addCompBtn">Add Peers</button><button id="purchaseBtn">Purchase</button><button id="newSearchBtn">New Search</button></div>`;
+           <button id="addCompBtn">Add Peers</button><button id="purchaseBtn">Purchase</button><button id="newSearchBtn">New Search</button>`;
 }
 
 

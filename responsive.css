@@ -1,11 +1,11 @@
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) 
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) 
 {
+    /*Styles*/ 
    html
 	{
 		background-image: none;
-		background-color: #E2E8E8;
-		font-size: 35px;
+		background-color: white;		
 	}
 
 	.col-3
@@ -15,8 +15,24 @@
 
 	h1
 	{
-		font-size: 30px;
+		font-size: 2em
 	}
+
+	.promptContainer
+	{
+		width: 100%;
+		margin-right: 0;
+		text-align: center;
+	}
+
+	.startPrompt
+	{
+		width: 90%;
+	    font-size: 3.5em;
+	    margin-right: auto;
+	    margin-left: auto;
+	}
+
 
 	h3
 	{
@@ -25,8 +41,8 @@
 
 	#errorMsg
 	{
-		font-size: 40px;
-		width: 200px;
+		font-size: 4em;
+    	width: 100%;
 	}
 
 	.peerPage
@@ -66,20 +82,130 @@
 		width: 100%;
 	}
 
+	#searchInput
+	{
+		margin-left: auto;
+	    margin-right: auto;
+	    width: 80%;
+	    border: 1px solid orange;
+	    font-size: 3em;
+	    padding: 30px;
+	}
+
 	.submitButton
+	{
+		width: 50%;
+	    font-size: 4em;
+	    height: initial;
+	}
+}
+
+
+/* Smartphones (landscape) -----------*/
+@media only screen and (max-width : 420px) and (min-width: 321px)
+{
+   /* Styles */
+   html
+	{
+		background-image: none;
+		background-color: white;
+		font-size: 20px;
+	}
+
+	.col-3
 	{
 		width: 100%;
 	}
 
+	h1
+	{
+		font-size: 2em;
+	}
+
+	.startPrompt
+	{
+	   background-color: #E6E8E2;
+       font-size: 2.5em;
+       padding: 21px;
+	}
+
+	h3
+	{
+		font-size: 25px;
+	}
+
+	#errorMsg
+	{
+		font-size: 40px;
+		width: 80%;
+	}
+
+	.peerPage
+	{
+		background-color: transparent;
+		border: none;
+		font-size: 25px;		
+	}
+
+	.compDiv
+	{
+		border: 1px solid black;
+		margin: 5px auto 20px auto;
+
+	}
+
+	.compDiv p
+	{
+		max-width: 175px;
+		word-wrap: break-word;
+	}
+
+	.brokerLogos
+	{
+	   margin: 5px auto 20px auto;	
+	   text-align: center;	
+	}
+
+	.brokerLogos img
+	{
+		width: 190px;
+		height: 190px;
+	}
+
+	.displayPage
+	{
+		width: 100%;
+	}
+
+	#searchInput
+	{
+		margin-left: auto;
+    	margin-right: auto;
+	    width: 50%;
+	    border: 1px solid orange;
+	    font-size: 2em;
+	    padding: 48px 13px;
+	}
+
+	.submitButton
+	{
+		width: 80%;
+	    font-size: 3em;
+	    height: initial;
+	}
 }
 
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) 
+
+/* iPads (portrait) ----------- */
+@media only screen and (max-device-width : 768px) and (min-width: 421px)
 {
-   .col-3
+    /* Styles */
+	html
 	{
-		width: 25%;
+		background-image: none;
+		background-color: white;
+		font-size: 35px;
 	}
 
 	main
@@ -99,22 +225,104 @@
 		margin-left: auto;
 	}
 
+	h1
+	{
+		font-size: 1em;
+	}
+
 	h3
 	{
 		margin-left: auto;
 		margin-right: auto;
-		background-color: #E6E8E2;
+		background-color: #E6E8E2;		
+	}
+
+	.startPrompt
+	{
+		width: 100%;
 	}
 
 	#searchInput
 	{
 		margin-left: auto;
-		margin-right: auto;
-		width: 100%;
+	    margin-right: auto;
+	    width: 63%;
+	    border: 1px solid orange;
+	    font-size: 1em;
+	    padding: 29px;
 	}
 
 	.submitButton
 	{
+		width: 76%;
+	    font-size: 1.5em;
+	    height: initial;
+	}
+}
+
+
+
+ /*iPads (landscape) ----------- */
+@media only screen and (min-device-width : 769px) and (max-device-width : 1024px)
+{
+    /*Styles */
+    .col-3
+	{
+		width: 25%;
+	}
+
+	html
+	{
+		background-image: none;
+		background-color: white;
+		font-size: 35px;
+	}
+
+	main
+	{
+		text-align: center;
+	}
+
+	#container
+	{
+		text-align: center;
+	}
+
+	.startPage
+	{
+		text-align: center;
+	    margin-right: auto;
+	    margin-left: auto;
+	    width: 100%;
+	}
+
+	h3
+	{
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #E6E8E2;		
+	}
+
+	.startPrompt
+	{
 		width: 100%;
 	}
+
+	#searchInput
+	{
+		margin-left: auto;
+	    margin-right: auto;
+	    width: 70%;
+	    border: 1px solid orange;
+	    font-size: 1em;
+	    padding: 28px;
+	}
+
+	.submitButton
+	{
+		width: 80%;
+	    font-size: 1.5em;
+	    height: initial;
+	}
+
 }
