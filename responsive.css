@@ -3,12 +3,12 @@
 	body
 	{
 		width: 100%;
-		padding: 10%;
+		padding: 5%;
 	}
 
 	h1 
 	{
-	    font-size: 0.5em;
+	    font-size: 0.7em;
 	    margin-right: auto;
 	    margin-left: auto;
 	}
@@ -32,6 +32,44 @@
 	.submitButton
 	{
 		width: 90%;
+	}
+
+	.displayPage
+	{
+		padding: 15%;
+	}
+
+	#addCompBtn 
+	{
+	    width: 100%;	    
+	    font-size: 1em;	    
+	    border: transparent;
+	    margin: 2%;
+	    display: block;
+	    margin: 5% auto;
+	    padding: 7%
+	}
+
+	#purchaseBtn
+	{
+	    width: 100%;	    
+	    font-size: 1em;	    
+	    border: transparent;
+	    margin: 2%;
+	    display: block;
+	    margin: 5% auto;
+	    padding: 7%
+	}
+
+	#newSearchBtn
+	{
+	    width: 100%;	    
+	    font-size: 1em;	    
+	    border: transparent;
+	    margin: 2%;
+	    display: block;
+	    margin: 5% auto;
+	    padding: 7%
 	}
 }
 
