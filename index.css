@@ -41,18 +41,10 @@ html
 	background-color: white;
 	margin-right: auto;
 	margin-left: auto;
+	display: none;
+	color: red;
+	margin-top: 35px;
 }
-
-/*
-.brokerLogos
-{
-	width: 800px;
-	height: 275px;
-	background-color: white;
-	padding: 15px;
-}
-*/
-
 
 .brokerLogos img
 {
@@ -71,7 +63,7 @@ img:hover
 #searchInput
 {
 	background-color: #E6E8E2;
-	border: transparent;
+	border: 1px solid;
 	width: 300px;
 	height: 40px;
 	font-size: 20px;
@@ -250,11 +242,4 @@ main
 {
 	font-size: 20px;
 	font-family: 'Raleway', san-serif;
-}
-
-#errorMsg
-{
-	display: none;
-	color: red;
-	margin-top: 35px;
 }

@@ -93,7 +93,7 @@ function createHtmlStrings( htmlStringDataSource )
 
 
 
-function addComparableComps() //  identifier of parameter????...event delegation?
+function addComparableComps() 
 {
    // Listens for click on "Add Comparable Button"
    $( '#addCompBtn' ).on( 'click', function ( event )
