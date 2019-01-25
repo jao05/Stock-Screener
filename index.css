@@ -8,7 +8,6 @@ html
 	background-image: url( 'SSbackgroundImage.jpg' );
 	background-size: cover;
 	background-repeat: repeat;	
-	/*min-width: 1000px;*/
 }
 
 
@@ -165,8 +164,7 @@ main
 }
 
 #newSearchBtn
-{
-	
+{	
 	width: 20%;
 	height: 100%;
 	font-size: 100%;
