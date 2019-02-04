@@ -87,14 +87,13 @@ img:hover
 
 .submitButton:hover
 {
-	background-color: white;
-	color: #223DE8;
-	border: 2px solid #223DE8;
+	background-color: #4681FF;
+	cursor: pointer;	
 }
 
 body
 {
-	padding: 60px;
+	padding: 5%;
 }
 
 header
@@ -157,10 +156,9 @@ main
 }
 
 #purchaseBtn:hover
-{
-	background-color: white;
-	color: #223DE8;
-	border: 2px solid #223DE8;
+{	
+	background-color: #4681FF;
+	cursor: pointer;
 }
 
 #newSearchBtn
@@ -176,10 +174,9 @@ main
 }
 
 #newSearchBtn:hover
-{
-	background-color: white;
-	color: #223DE8;
-	border: 2px solid #223DE8;
+{	
+	background-color: #4681FF;
+	cursor: pointer;
 }
 
 
@@ -197,10 +194,9 @@ main
 }
 
 #addCompBtn:hover
-{
-	background-color: white;
-	color: #223DE8;
-	border: 2px solid #223DE8;
+{	
+	background-color: #4681FF;
+	cursor: pointer;
 }
 
 .peerPage

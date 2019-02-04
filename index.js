@@ -142,7 +142,7 @@ function makePeerRequest( comparable )
   .fail( function( event )
     {
        $( '#errorMsg' ).show();
-    } );
+    });
 }
 
 
