@@ -26,7 +26,7 @@
 		width: 80%;    
 	    font-size: 1em;	    
 	    padding: 5%;
-	    margin: 10% auto;
+	    margin: 5% auto;
 	}
 
 	.submitButton
@@ -36,7 +36,12 @@
 
 	.displayPage
 	{
-		padding: 15%;
+		padding: 5%;
+		width: 90%;
+	}
+
+	.peerPage {
+		width: 90%;
 	}
 
 	#addCompBtn 
@@ -59,6 +64,20 @@
 	    display: block;
 	    margin: 5% auto;
 	    padding: 7%
+	}
+
+	.brokerLogos img 
+	{
+	    width: 99%;
+	    height: 225px;
+	    margin: auto;
+	    border: 3px solid grey;
+	    margin-bottom: 3%;
+	}
+
+	.brokerLogos img:hover
+	{
+		border: 3px solid blue;
 	}
 
 	#newSearchBtn
@@ -100,19 +119,21 @@
 
 	body
 	{
-		padding: 5%;
+		padding: 1%;
 	}
 
 	.startPrompt 
 	{	    
-	    padding: 2%;
+	    padding: 1%;
+	    font-size: 1.2em;
 	}
 
 	#searchInput 
 	{    
-	    margin: 10%;
-	    padding: 3%;
+	    margin: 5%;
+	    padding: 2%;
 	    width: 50%;
+	    font-size: 1.5em;
 	}
 
 	.submitButton 
@@ -122,5 +143,23 @@
 	    width: 30%;	    
 	    font-size: 2em;	    
 	    padding: .5%;
+	}
+
+	.displayPage
+	{
+		width: 50%;
+		padding: 2%;
+	}
+
+	#addCompBtn, #newSearchBtn, #purchaseBtn 
+	{
+		width: 30%;
+		padding: 2%;
+	}
+
+	.brokerLogos img 
+	{
+		width: 33%;
+		margin: 2%;
 	}
 }

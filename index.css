@@ -7,7 +7,9 @@ html
 {
 	background-image: url( 'SSbackgroundImage.jpg' );
 	background-size: cover;
-	background-repeat: repeat;	
+	background-repeat: repeat;
+	min-width: 100%;
+	min-height: 100%;	
 }
 
 
@@ -19,7 +21,7 @@ html
 .startPrompt 
 {
     background-color: #E6E8E2;
-    font-size: 1.5em;
+    font-size: 1.2em;
     padding: 5%;
 }
 
